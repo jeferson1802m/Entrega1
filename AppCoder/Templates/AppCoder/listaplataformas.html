@@ -1,0 +1,27 @@
+{% extends 'AppCoder/padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoquecambia3%}
+     <h1>Plataformas de AppCoder - Plataformas</h1>
+     
+     <ul>
+         {% for Plataforma in object_list %}
+
+         <li>
+
+            <p>Nombre: {{Plataforma.nombre}} </p>
+            <a href="{%url 'New' %}">Crear</a> 
+            <a href="{%url 'Detail' Plataforma.id %}">Ver</a>
+            <a href="{%url 'Edit' Plataforma.id %}">Editar</a>
+            <a href="{%url 'Delete' Plataforma.id %}">Borrar</a>
+
+            </P>
+
+        {% endfor %}
+
+         </li>
+     </ul>
+     
+{% endblock %}
